@@ -1,0 +1,40 @@
+.footer {
+  width: 100%;
+  min-height: 10vh;
+  border-top: 1px solid #000000;
+  background: none;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-around;
+}
+.footer .icon-holder {
+  float: left;
+  font-size: 25px;
+  padding: 10px;
+}
+.footer .icon-holder a {
+  text-decoration: none;
+  margin-left: 15px;
+  cursor: pointer;
+}
+.footer .icon-holder a:nth-child(1):hover {
+  color: blue;
+}
+.footer .icon-holder a:nth-child(2):hover {
+  color: #630a0a;
+}
+.footer .icon-holder a:nth-child(3):hover {
+  color: red;
+}
+.footer .footer-text {
+  width: 50%;
+  height: 100%;
+  margin-left: auto;
+  margin-top: 10px;
+  color: black;
+}
+@media screen and (max-width: 1080px) {
+  .footer .footer-text {
+    margin-right: 5%;
+  }
+}

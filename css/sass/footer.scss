@@ -1,0 +1,49 @@
+.footer {
+    width: 100%;
+    min-height: 10vh;
+    border-top: 1px solid #000000;
+    background: none;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-around;
+
+    .icon-holder {
+        float: left;
+        font-size: 25px;
+        padding: 10px;
+    }
+
+    .icon-holder a {
+        text-decoration: none;
+        margin-left: 15px;
+        cursor: pointer;
+
+        &:nth-child(1):hover {
+            color: rgb(0, 0, 255);
+        }
+
+        &:nth-child(2):hover {
+            color: rgb(99, 10, 10);
+        }
+
+        &:nth-child(3):hover {
+            color: rgb(255, 0, 0);
+        }
+    }
+
+
+    .footer-text {
+        width: 50%;
+        height: 100%;
+        margin-left: auto;
+        margin-top: 10px;
+        color: rgb(0, 0, 0);
+
+    }
+
+    @media screen and (max-width: 1080px) {
+        .footer-text {
+            margin-right: 5%;
+        }
+    }
+}

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="us">
+<!--hellow there-->
+<head>
+    <title>Web Market</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="image/LogoSize_Favicon_ByTailorBrands/Untitled.png">
+
+    <style>
+        .btn-list {
+            background: none;
+            width: 16%;
+            position: relative;
+            z-index: 999;
+            border: none;
+            cursor: pointer;
+            display: none;
+            transition: all .21s ease-in-out;
+        }
+
+        .btn-list span {
+            width: 30px;
+            height: 3px;
+            display: block;
+            background: #ffffff;
+            position: relative;
+            margin: 6px auto;
+            transition: all .2s linear;
+
+        }
+
+        .active span:nth-child(1) {
+            transform: rotate(45deg);
+            top: 5px;
+        }
+
+        .active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .active span:nth-child(3) {
+            transform: rotate(-45deg);
+            bottom: 13px;
+        }
+
+        .btn-up {
+            display: none;
+            position: fixed;
+            width: 50px;
+            height: 30px;
+            z-index: 2;
+            background: #FFC312;
+            overflow: hidden;
+            right: 6%;
+            bottom: 0;
+            outline: none;
+            text-align: center;
+            transition: all .25s ease-in-out;
+            cursor: pointer;
+            animation: bottup 1.25s linear;
+            color: #000;
+            box-shadow: 10px 10px 90px #FFC312;
+        }
+
+        .btn-up:hover {
+            background-color: #eed076;
+            color: #ffffff;
+        }
+
+        @keyframes bottup {
+            from {
+                bottom: -200px;
+            }
+
+            to {
+                bottom: 0;
+            }
+        }
+
+        .btn-up i {
+            margin-top: 6px;
+        }
+
+        .decot {
+            background-image: linear-gradient(200deg, #000000, #ffffff);
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            z-index: 999;
+            position: fixed;
+            transition: all .25s ease;
+        }
+
+        @keyframes outcome {
+            from {
+                transform: rotate(1turn);
+
+            }
+
+            to {
+                transform: translate(-500%, 0%)
+            }
+        }
+
+        .decot h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 50%;
+            text-align: center;
+            line-height: 1.2rem;
+            font-weight: bold;
+
+        }
+
+        .loding-container {
+            position: relative;
+            height: 10vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .loding-container span {
+            height: 5px;
+            width: 9px;
+            margin-left: 1px;
+            animation: rot 1.94s linear infinite;
+            background: maroon;
+            bottom: 0px;
+            display: block;
+        }
+
+        .loding-container span:nth-child(1) {
+            animation-delay: .2s;
+            left: 11px;
+        }
+
+        .loding-container span:nth-child(2) {
+            animation-delay: .4s;
+            left: 23px;
+        }
+
+        .loding-container span:nth-child(3) {
+            animation-delay: .6s;
+            left: 33px;
+        }
+
+        .loding-container span:nth-child(4) {
+            animation-delay: .8s;
+            left: 43px;
+        }
+
+        .loding-container span:nth-child(5) {
+            animation-delay: 1s;
+            left: 53px;
+        }
+
+        .loding-container span:nth-child(6) {
+            animation-delay: 1.2s;
+            left: 63px;
+        }
+
+        @keyframes rot {
+
+            0%,
+            50%,
+            100% {
+                height: 5px;
+                transform: translateY(0px);
+                background: black;
+            }
+
+            25% {
+                height: 85px;
+                transform: translateY(10px);
+                background: crimson;
+            }
+
+
+        }
+    </style>
+
+</head>
+
+<body id="bsa">
+    <!--start loding page -->
+    <div class="decot" id="gf">
+
+        <div class="loding-container">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!--end loding page -->
+
+    <!--START BTN-->
+    <a class="btn-up" href="#bsa" id="btnup">
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+    <!--END BTN-->
+
+    <!--start header-->
+    <div class="header">
+        <div class="navbar" id="nav">
+            <div class="container">
+                <h3 id="hea" style="transition: all .21s ease-in-out;">Mar<span>keting</span></h3>
+                <ul id="lista">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#selling">Selling</a></li>
+                    <li><a href="#contactus">Contact Us</li></a></li>
+                </ul>
+                <button class="btn-list" id="show">
+
+                    <span class="sp"></span>
+                    <span class="sp"></span>
+                    <span class="sp"></span>
+
+                </button>
+            </div>
+        </div>
+        <div class="slider">
+            <div class="container">
+                <h2 id="home" style="color: rgb(26, 25, 25); font-family:fantasy;">Web Marketing</h2>
+
+            </div>
+        </div>
+    </div>
+    <!--end header-->
+
+    <!--start section-->
+
+    <div class="section">
+        <div class="container">
+            <div class="showcase">
+                <div class="showcase show-1">
+                    <span><i class="fa fa-laptop fa-2x"></i></span>
+                    <h3>Best Laptop Selling Here</h3>
+                    <p>Here you can get the best laptops for yor business, games or any thing you want , for evrey kind.</p>
+                    <button>
+                        <a href="#laps">Show more</a>
+                    </button>
+                </div>
+                <div class="showcase show-2">
+                    <span><i class="fas fa-couch fa-2x"></i></span>
+                    <h3>Best Furniture </h3>
+                    <p> In this web site you can buy modren, and classic furniture for your apartment and make it beauty</p>
+                    <button>
+                        <a href="#fur">Show more</a>
+                    </button>
+                </div>
+                <div class="showcase show-3">
+                    <span><i class="fas fa-charging-station fa-2x"></i></span>
+                    <h3>Electrical devices</h3>
+                    <p>Of course you can buy the best electrical devices like:TOSHIPA, FRESH, SAMSUNG .</p>
+                    <button>
+                        <a href="#">Show more</a>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!--end section-->
+
+
+    <!--start about-->
+    <div class="about" id="about">
+        <div class="container">
+            <div class="about-container">
+                <div class="img-container">
+                    <img src="image/up-2081170_1280.jpg" alt="marketing">
+                </div>
+                <div class="row-2">
+                    <h2>About The Site</h2>
+                    <p>This site were created by<strong>Hossam Ragab</strong> at may 2020, and this site help you to
+                        buy
+                        evry thing you want with less price than the aother sites </p>
+
+                    <h2>How To Use It</h2>
+                    <p>This site is to esy to use when you like something in our site you should write the price in
+                        the
+                        empty box it will show you the price with your country</p>
+
+                    <h2>A Word To The clients</h2>
+                    <p>Dear cleint we hope that our site like you and if you face any trouble you have to text us in
+                        the
+                        feedback box</p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--end about-->
+
+    <!--start selling-->
+
+    <div class="selling" id="selling">
+        <div class="container">
+            <div class="showing">
+                <div class="product">
+                    <h2 id="laps">Laptop Section</h2>
+
+                    <div class="list-holder">
+                        <ul>
+                            <li><a id="openpre">Predator</a></li>
+                            <li><a id="openac">Acer</a></li>
+                            <li><a id="openle">Lenovo-Legion-Y520</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="lap-1" id="98722" style="display: none;">
+                        <div class="pre-img">
+                            <span id="222">
+                                <div class="text-a">
+                                    <div class="text-holder">
+                                        <h4>Show More</h4>
+                                    </div>
+                                </div>
+                            </span>
+                            <img src="image/laps/predator/Predator_21X_SKU_Photogallery_01 (1).png">
+
+                        </div>
+                        <div class="pre-img">
+                            <img src="image/laps/predator/Predator_21X_SKU_Photogallery_02.png">
+                            <span id="223">
+                                <div class="text-a">
+                                    <div class="text-holder">
+                                        <h4>Show More</h4>
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="pre-img">
+                            <img src="image/laps/predator/Predator_21X_SKU_Photogallery_03.png">
+                            <span id="224">
+                                <div class="text-a">
+                                    <div class="text-holder">
+                                        <h4>Show More</h4>
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="pre-info" id="01452">
+                        <div class="pre-container">
+                            <h3>Predator 21 X</h3>
+                            <p><strong>About this insane laptop :</strong><br>
+                                <strong> processor :</strong> intel Core<sup>Tm</sup> i7 i7-7820HK. 2.90 GHz.<br>
+                                <strong>Display &amp; Grapics :</strong> GeForce® GTX 1080 SLI. Up to 16 GB. GDDR5X.
+                                53.3 cm
+                                (21") Tearing Prevention Technology. NVIDIA G-SYNC™.<br>
+                                <strong>Memory :</strong> 64 GB <br>
+                                <strong>storage :</strong> 1 TB. Serial ATA. solid state drive Configuration. 2 x 512 GB
+                                .
+                                TB
+                            </p>
+                        </div>
+                    </div>
+                    <div class="lap-1" style="display: none;" id="557788">
+                        <div class="pre-img">
+                            <span id="225">
+                                <div class="text-a">
+                                    <div class="text-holder">
+                                        <h4>Show More</h4>
+                                    </div>
+                                </div>
+                            </span>
+                            <img src="image/laps/acer/81AWfiXDyGL._AC_SL1500_.jpg">
+                        </div>
+                        <div class="pre-img" id="adw">
+                            <span>
+                                <div class="text-a">
+                                    <div class="text-holder">
+                                        <h4>Show More</h4>
+                                    </div>
+                                </div>
+                            </span>
+                            <img src="image/laps/acer/91JSH+mPzOL._AC_SL1500_.jpg">
+                        </div>
+                        <div class="pre-img">
+                            <span id="226">
+                                <div class="text-a">
+                                    <div class="text-holder">
+                                        <h4>Show More</h4>
+                                    </div>
+                                </div>
+                            </span>
+                            <img src="image/laps/acer/A1U+gjYeW+L._AC_SL1500_.jpg">
+                        </div>
+                    </div>
+                    <div id="1235" class="rap-2">
+                        <h3>Acer Aspire 5</h3>
+                        <p><Strong>CPU:</Strong> 8th Generation Intel Core i5-8250U Processor (Up to 3.4GHz) <br>
+                            <strong>Graphics:</strong> 15.6" Full HD (1920 x 1080) Comfy View widescreen LED-backlit
+                            display<br>
+                            <strong>RAM:</strong> 8GB DDR4 Memory & 256GB SSD
+                        </p>
+                    </div>
+                    <div class="lap-1" style="display: none;" id="887799">
+                        <div class="pre-img">
+                            <span id="227">
+                                <div class="text-a">
+                                    <div class="text-holder">
+                                        <h4>Show More</h4>
+                                    </div>
+                                </div>
+                            </span>
+                            <img src="image/laps/lenovo/4zu3_Lenovo_Y520_15IKBN.jpg">
+                        </div>
+                        <div class="pre-img">
+                            <span id="228">
+                                <div class="text-a">
+                                    <div class="text-holder">
+                                        <h4>Show More</h4>
+                                    </div>
+                                </div>
+                            </span>
+                            <img src="image/laps/lenovo/Lenovo-Legion-Y520-3-1024x576.jpg">
+                        </div>
+                        <div class="pre-img">
+                            <span id="229">
+                                <div class="text-a">
+                                    <div class="text-holder">
+                                        <h4>Show More</h4>
+                                    </div>
+                                </div>
+                            </span>
+                            <img src="image/laps/lenovo/lenovo-legion-y520-hero2.jpg">
+                        </div>
+                    </div>
+                    <div id="112233" class="rap-3">
+                        <h3>Lenovo Legion Y520</h3>
+                        <p>
+                            <strong>CPU: </strong> 2.8GHz Intel Core i7-7700HQ (dual-core, 6MB cache, up to
+                            3.8GHz).<br>
+                            <strong>Graphics: </strong> Nvidia GeForce GTX 1050 Ti (4GB GDDR5 RAM); Intel HD
+                            Graphics 630.<br>
+                            <strong>RAM: </strong> 16GB. <br>
+                            <strong>Storage: </strong> 256GB SSD (M.2 PCIe); 2TB HDD (5,400 rpm).
+                        </p>
+                    </div>
+                    <!--start bed section-->
+                    <div class="fur-1" id="fur">
+                        <h2>Furniture Section</h2>
+                        <div class="rwo-3">
+                            <a data-text="Bed Section" id="bed-sh" title="clickable">Bed Section</a><br>
+                            <div class="img-behav" id="chose-pic">
+                                <img src="image/furniture/bed/resizeing/furresize.jpg">
+                                <img src="image/furniture/bed/resizeing/resize.jpg">
+                                <img src="image/furniture/bed/resizeing/resize1.jpg">
+                                <button class="chonget" id="for-change">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="row-4" style="height: 100px;">
+
+                            <h4>Living Room Section:</h4>
+                            <div class="living-imgs">
+                                <div class="img-container"><img data-original="designer-living-rooms-009.jpg"
+                                        src="image\furniture\chair\designer-living-rooms-009.jpg" alt="Living Room">
+                                </div>
+                                <div class="img-container"><img
+                                        data-original="simple-bedroom-design-simple-bedroom-design-mystery-wallpaper_0fbc7b6cf27ea0fe.jpg"
+                                        src="image\furniture\chair\simple-bedroom-design-simple-bedroom-design-mystery-wallpaper_0fbc7b6cf27ea0fe.jpg"
+                                        alt="Living Room"></div>
+                                <div class="img-container"><img data-original="pexels-vecislavas-popa-1743227.jpg"
+                                        src="image\furniture\chair\pexels-vecislavas-popa-1743227.jpg"
+                                        alt="Living Room"></div>
+                            </div>
+                            <div class="info-img">
+                                <img src="image\furniture\chair\pexels-vecislavas-popa-1743227.jpg" alt="fgdfg"
+                                    class="full-img">
+                                <p class="caption">Living Room</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--start bed section-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--end selling-->
+    <!--Start Contact Us-->
+
+    <div class="contact" id="contactus">
+        <div class="container">
+            <form class="input-holder">
+                <div class="email-in">
+                    <input type="text" class="input-email">
+                    <label class="label-email">
+                        <span class="contact-email">Email</span>
+                    </label>
+                </div>
+                <div class="pass-in">
+                    <input type="password" class="input-Password">
+                    <label class="label-pass">
+                        <span class="contact-pass">Password</span>
+                    </label>
+                </div>
+                <button class="sub-btn">Subscribe</button>
+                <textarea class="contact-tarea" placeholder="write your problem......."></textarea>
+                <button class="feed-btn">Text Us </button>
+            </form>
+            <!--Start Footer-->
+            <div class="footer">
+                <div class="icon-holder">
+                    <a><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    <a><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                </div>
+                <div class="footer-text">
+                    <p>&copy;Hossam Ragab Gafer 22<sup>th</sup> sep 2020</p>
+                </div>
+            </div>
+
+            <!--End Footer-->
+        </div>
+
+    </div>
+
+
+    <!--End Contact Us-->
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
